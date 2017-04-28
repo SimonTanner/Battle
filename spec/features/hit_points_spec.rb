@@ -15,7 +15,7 @@ feature 'Hit points' do
   scenario 'reduce P2 hit points by 10' do
     sign_in_and_play
     click_button('Attack')
-    click_button('Back')
+    click_button('Next Round')
     expect(page).not_to have_content 'Blue: 30HP'
     expect(page).to have_content 'Blue: 20HP'
   end

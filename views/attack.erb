@@ -3,8 +3,12 @@
 
 <p> It's super effective! </p>
 
-<%= @game.player_2.name %>: <%= @game.player_2.hp %>HP
+<%= @game.player.name %>: <%= @game.player.hp %>HP
 
 <form action='/play' method='get'>
-  <input type='submit' value='Back'>
+  <div class="button">
+    <button type="submit">Next Round</button>
+  </div>
 </form>
+
+<!-- <a href="/play">OK</a> -->
