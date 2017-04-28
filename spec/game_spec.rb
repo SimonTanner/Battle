@@ -8,6 +8,7 @@ describe Game do
   describe '#attack' do
     it 'damages other player' do
       expect(player_2).to receive(:receive_damage)
+      game.whos_turn
       game.attack
     end
   end
@@ -25,8 +26,14 @@ describe Game do
   end
 
   describe '#whos_turn' do
-    it 'switches the players\' turn' do
-      expect(game.whos_turn).to eq player_2
+    it 'It selects player 1 to attack 1st' do
+      game.whos_turn
+      expect(game.attacker).to eq player_1
+    end
+
+    it 'It selects player 2 to attack next' do
+      2.times {game.whos_turn}
+      expect(game.attacker).to eq player_2
     end
   end
 

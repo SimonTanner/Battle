@@ -16,15 +16,15 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = $game
+    @game.whos_turn
     erb :play
   end
 
   get '/attack' do
     @game = $game
     @game.attack
-    erb :attack
-    @game.whos_turn
     $game = @game
+    erb :attack
   end
 
   run! if app_file == $0
