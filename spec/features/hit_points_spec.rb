@@ -6,7 +6,7 @@ feature 'Hit points' do
     expect(page).to have_content 'Blue: 30HP'
   end
 
-  scenario 'get confirmation of attack' do
+  scenario 'gets confirmation of attack' do
     sign_in_and_play
     click_button('Attack')
     expect(page).to have_content "It's super effective!"

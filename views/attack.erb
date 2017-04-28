@@ -1,9 +1,9 @@
-<%= @player_1.name %> attacked <%= @player_2.name %>!
+<%= @game.player_1.name %> attacked <%= @game.player_2.name %>!
 
 
 <p> It's super effective! </p>
 
-<%= @player_2.name %>: <%= @player_2.hp %>HP
+<%= @game.player_2.name %>: <%= @game.player_2.hp %>HP
 
 <form action='/play' method='get'>
   <input type='submit' value='Back'>
